@@ -7,7 +7,9 @@
 		<link rel="stylesheet" href="<?php echo URL_BASE ?>assets/css/auxiliar.css">
 		<link rel="stylesheet" href="<?php echo URL_BASE ?>assets/css/grade.css">
 		<link rel="stylesheet" href="<?php echo URL_BASE ?>assets/css/style.css">	
-		<script> var base_url = "<?php echo URL_BASE ?>"</script>
+		<script> 
+			var base_url = "<?php echo URL_BASE ?>"
+		</script>
 				
 	</head>
 	<body>
@@ -25,6 +27,6 @@
 		<script src="https://kit.fontawesome.com/9480317a2f.js"></script>
 		<script src="<?php echo URL_BASE ?>assets/js/jquery.min.js"></script>
 		<script src="<?php echo URL_BASE ?>assets/js/js.js"></script>
-		<script src="<?php echo URL_BASE ?>assets/js/js_pedido.js"></script>
+		
 	</body>
 </html>

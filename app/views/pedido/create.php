@@ -1,4 +1,4 @@
-
+<script src="<?php echo URL_BASE ?>assets/js/js_pedido.js"></script>
 <div class="">
 					<div class="width-100 d-flex">
 						<div class="divisor border-bottom">
@@ -8,25 +8,26 @@
 									<div class="col-4 d-flex">
 										<div class="cx">	
 											<label class="text-label"><i class="fas fa-user"></i> Nome do cliente</label>
-											<span class="h6 mb-0">Manoel jailton sousa do nascimento</span>
+											<span class="h6 mb-0"><?php echo $pedido->cliente->nome ?></span>
+											
 										</div>
 									</div>
 									<div class="col d-flex">
 										<div class="cx">	
 											<label class="text-label"><i class="fas fa-calendar"></i> Data</label>
-											<span class="h6 mb-0">29/11/2019</span>
+											<span class="h6 mb-0"><?php echo databr($pedido->data)?> </span>
 										</div>
 									</div>
 									<div class="col d-flex">
 										<div class="cx">	
 											<label class="text-label"><i class="far fa-clock"></i> Hora</label>
-											<span class="h6 mb-0">09:04:25</span>
+											<span class="h6 mb-0"><?php echo $pedido->hora?></span>
 										</div>
 									</div>
 									<div class="col d-flex">
 										<div class="cx">	
 											<label class="text-label"><i class="fas fa-dollar-sign"></i> Valor</label>
-											<span class="h6 mb-0">09:04:25</span>
+											<span class="h6 mb-0"><?php echo $pedido->total_pedido?></span>
 										</div>
 									</div>
 								</div>
@@ -49,13 +50,14 @@
 											</div>
 										<div class="col-2">
 											<span class="text-label">Quantidade</span>
-											<input type="number" value="1" class="form-campo">
+											<input type="number" id="qtde" value="1" class="form-campo">
 										</div>
 										<div class="col-2">
 											<span class="text-label">Valor</span>
-											<input type="text" value="100,00" class="form-campo">
+											<input type="text" id="valor" value="100,00" class="form-campo">
 										</div>
 										<div class="col-2 mt-3 pt-2">
+											<input type="hidden" id="id_produto">
 											<input type="submit" value="Inserir" class="btn btn-azul width-100">
 										</div>
 									</div>

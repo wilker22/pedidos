@@ -30,6 +30,13 @@ class PedidoController extends Controller{
     }
     
     public function create(){
+        $id_cliente = $this->usuario->id_cliente;
+        $pedido = pedidoService::getPedidoNaoFinalizado($this->usuario->id_cliente);
+        if(!$pedido){
+            $id_pedido = Service::inserir(["id_cliente" => $id_cliente, "data" => hoje(), "hora"=>agora()], "pedido");
+            $pedido = PedidoService::getPedido($id_pedido);
+        }
+        $dados["pedido"] = $pedido;
         $dados["view"] = "pedido/Create";
         $this->load("template", $dados);
     }

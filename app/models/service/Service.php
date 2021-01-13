@@ -96,7 +96,7 @@ class Service{
         return false;
     }
     
-    public static function inserir($dados, $tabela){
+    public static function inserir($dados=[], $tabela){
         $dao = new Dao();
         return  $dao->inserir($dados, $tabela);
     }
