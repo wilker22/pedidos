@@ -4,25 +4,29 @@
 		<title>Sistema de pedido</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale= 1">
-		<link rel="stylesheet" href="css/auxiliar.css">
-		<link rel="stylesheet" href="css/grade.css">
-		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="<?php echo URL_BASE ?>assets/css/auxiliar.css">
+		<link rel="stylesheet" href="<?php echo URL_BASE ?>assets/css/grade.css">
+		<link rel="stylesheet" href="<?php echo URL_BASE ?>assets/css/style.css">
 		
-		<script src="js/jquery.min.js"></script>
-		<script src="js/js.js"></script>
+		<script src="<?php echo URL_BASE ?>assets/js/jquery.min.js"></script>
+		<script src="<?php echo URL_BASE ?>assets/js/js.js"></script>
 		<script src="https://kit.fontawesome.com/9480317a2f.js"></script>
 				
 	</head>
 	<body class="login">
+		
 		<div class="col-4 m-auto">
 			<div class="base-login">
+
+			<?php $this->verMsg(); ?>
+
 				<h2>PEDIDO LOGIN</h2>
-				<form action="index.html" method="post">
+				<form action="<?php echo URL_BASE ."login/logar" ?>" method="post">
 					<label>Email</label>
-					<input type="text" placeholder="Digite seu email">
+					<input type="text" name="email" placeholder="Digite seu email">
 					
 					<label>Senha</label>
-					<input type="password" placeholder="Digite sua senha">
+					<input type="password" name ="senha" placeholder="Digite sua senha">
 					
 					<input type="submit" value="Entrar" name="" class="btn mt-2 width-100">
 					

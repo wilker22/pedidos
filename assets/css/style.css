@@ -418,4 +418,30 @@ footer p{
 		font-size: 1rem;
 		padding: 12px 5px;
 	}
+
+	
 }
+
+.listaProdutos{
+	position:absolute;
+	left:15px;
+	right:15px;
+	top:36px;
+	border: solid 1px #ccc;
+    background: #fff;
+	border-radius:0 0 5px 5px;
+	z-index:1
+}
+.listaProdutos a {
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: .9em;
+    line-height: 23px;
+    padding: 6px;
+	color: #7d8e94;
+}
+.listaProdutos a:hover {
+    background: #eee;
+}
+	
