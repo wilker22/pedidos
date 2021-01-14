@@ -4,6 +4,7 @@ namespace app\controllers;
 use app\core\Controller;
 use app\models\service\Service;
 use app\core\Flash;
+use app\models\service\ItemService;
 use app\models\service\pedidoService;
 use app\util\UtilService;
 
@@ -37,6 +38,7 @@ class PedidoController extends Controller{
             $pedido = PedidoService::getPedido($id_pedido);
         }
         $dados["pedido"] = $pedido;
+        $dados["itens"] = ItemService::listaPorPedido($pedido->id_pedido);
         $dados["view"] = "pedido/Create";
         $this->load("template", $dados);
     }

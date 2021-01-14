@@ -1,5 +1,5 @@
-<script src="<?php echo URL_BASE ?>assets/js/js_pedido.js"></script>
-<div class="">
+			
+                 <div class="">
 					<div class="width-100 d-flex">
 						<div class="divisor border-bottom">
 							<span class="titulo px-0"><i class="fab fa-wpforms"></i> dados do pedido</span>
@@ -8,8 +8,7 @@
 									<div class="col-4 d-flex">
 										<div class="cx">	
 											<label class="text-label"><i class="fas fa-user"></i> Nome do cliente</label>
-											<span class="h6 mb-0"><?php echo $pedido->cliente->nome ?></span>
-											
+											<span class="h6 mb-0"><?php echo $pedido->cliente ?></span>
 										</div>
 									</div>
 									<div class="col d-flex">
@@ -46,7 +45,6 @@
 												
 											</div>
 												<input type="text" id="produto" data-type="localizar_produto" class="form-campo" />
-												
 											</div>
 										<div class="col-2">
 											<span class="text-label">Quantidade</span>
@@ -56,9 +54,10 @@
 											<span class="text-label">Valor</span>
 											<input type="text" id="valor" value="100,00" class="form-campo">
 										</div>
+										
 										<div class="col-2 mt-3 pt-2">
-											<input type="hidden" id="id_produto">
-											<input type="submit" value="Inserir" class="btn btn-azul width-100">
+											<input type="hidden" id="id_produto" >
+											<input type="button" id="btnInserir" value="Inserir" class="btn btn-azul width-100">
 										</div>
 									</div>
 								</form>
@@ -69,7 +68,7 @@
 										<table cellpadding="0" cellspacing="0" id="dataTable">
 											<thead>
 												<tr>
-													<th width="2%" align="left">Item</th>
+													
 													<th width="2%" align="left">Id</th>
 													<th width="48%" align="left">Produto</th>
 													<th width="16%" align="center">Preço</th>
@@ -78,16 +77,18 @@
 													<th width="15%" align="center">Excluir</th>
 												</tr>
 											</thead>
-											<tbody>
+											<tbody id="lista_itens">
+											<?php foreach($itens as $item) {?>
 												<tr class="ativo">
-													<td>1</td>
-													<td>1</td>
-													<td>Café350g</td>
-													<td align="center">R$ 3.00</td>
-													<td align="center">1</td>
-													<td align="center">R$ 3</td>
-													<td align="center"><a href="index.php?link=3&amp;del=S&amp;i=59" class="btn btn-outline-vermelho">Excluir</a></td>
+													
+													<td><?php echo $item->id ?></td>
+													<td><?php echo $item->descricao ?></td>
+													<td align="center">R$ <?php echo $item->preco ?></td>
+													<td align="center"><?php echo $item->qtde ?></td>
+													<td align="center">R$ <?php echo $item->subtotal ?></td>
+													<td align="center"><a href="javascript:;" onclick="return excluir(this)" data-entidade="item" data-id="<?php echo $item->id_item?>" class="btn btn-outline-vermelho" >Excluir</a></td>
 												</tr>
+											<?php } ?>
 											</tbody>
 										</table>
 									</div>
@@ -99,3 +100,7 @@
 						</div>
 					</div>
 				</div>
+
+			<script>
+				var $id_pedido = "<?php echo $pedido->id_pedido?>" 
+			</script>

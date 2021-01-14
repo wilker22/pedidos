@@ -27,6 +27,7 @@
 		<script src="https://kit.fontawesome.com/9480317a2f.js"></script>
 		<script src="<?php echo URL_BASE ?>assets/js/jquery.min.js"></script>
 		<script src="<?php echo URL_BASE ?>assets/js/js.js"></script>
+		<script src="<?php echo URL_BASE ?>assets/js/js_pedido.js"></script>
 		
 	</body>
 </html>
